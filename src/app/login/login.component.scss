@@ -1,0 +1,46 @@
+.lab{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    position: relative;
+    left: 40px;
+}
+
+.labe{
+    color: #363636; 
+    font-size: 21px;
+    font-weight: 700;
+    position: relative;
+    top:5px;
+    left: 20px;
+    height: 30px;
+} 
+.help{
+    font-size: 11px;
+} 
+
+
+.button{ 
+    height: 35px;
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px;
+    width: 70px;
+
+}
+.input{
+    background-color: whitesmoke;
+    height: 35px;
+    font-size: 20px;
+  }
+  
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+.is-danger{
+    color: #770200
+}

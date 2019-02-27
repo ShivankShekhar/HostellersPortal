@@ -1,0 +1,133 @@
+<app-header></app-header>
+
+<section class="section" style="background-color: rgba(167, 226, 236, 0.658); height:700px;">
+    
+  <div class="container"> 
+    <form name="login"  > 
+      <h2 class="lab">Hostel Registration Form </h2>  
+      <div class="tile is-parent tile is-6 level-item" id="home" >
+        <article class="tile is-child box"> 
+
+          <div class="field"> <span class="labe">Student Id </span>
+            <input class="input is-rounded" type="text" placeholder="User ID" 
+                   name="userId" [(ngModel)]="userId" required minlength="5" 
+                   #nameInput="ngModel" style="width: 45%; left:140px">
+            <div class="help is-danger" *ngIf="nameInput.invalid && nameInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+              <b>Name is required and needs to be at least 5 characters long.</b>
+            </div> 
+          </div>   
+
+          <div class="field"> <span class="labe">Hostel </span> 
+                <div class="select is-rounded" style="left:170px">
+                  <div class="select is-info">
+                    <select id="hostel" name="hostel"  [(ngModel)]="hostel">
+                      <option>Select Hostel</option>
+                      <option>Sarabhai</option>
+                      <option>Bha-Bha</option>
+                      <option>Bose</option>
+                      <option>Raman</option>
+                      <option>Sarojini</option>
+                      <option>Kasturba</option> 
+                    </select>
+                  </div>
+                </div> 
+          </div>
+
+          <div class="field"> <span class="labe">Room No.</span>
+            <input class="input is-rounded" type="text" placeholder="Room No." 
+                   name="roomNo" [(ngModel)]="roomNo" required
+                   #roomNoInput="ngModel" style="width: 45%; left:145px">
+            <div class="help is-danger" *ngIf="roomNoInput.invalid && roomNoInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+              <b>Invalid</b>
+            </div>
+          </div> 
+
+          <div class="field"> <span class="labe">Email ID</span>
+            <input class="input is-rounded" type="email" placeholder="Email ID" 
+                   name="email" [(ngModel)]="email" required email 
+                   #emailInput="ngModel" style="width: 45%; left:160px">
+            <div *ngIf="emailInput.errors && emailInput.touched"> 
+              <div *ngIf="emailInput.errors.required"> 
+                Email required.
+              </div>			   
+              <div *ngIf="emailInput.invalid && !emailInput.errors.required"> 
+                Email not valid.
+              </div>
+            </div>   
+          </div> 
+
+          <div class="field"> <span class="labe">Mobile Number</span>
+            <input class="input is-rounded number" type="text" placeholder="Mobile Number"
+                   name="mobNum" [(ngModel)]="mobNum" required minlength="10" maxlength="10" 
+                   #mobNumInput="ngModel" style="width: 45%; left:105px">
+            <div class="help is-danger" *ngIf="mobNumInput.invalid && mobNumInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+              <b>Invalid Number</b>
+            </div>
+          </div> 
+
+          <div class="field"> <span class="labe">Father's Name</span>
+            <input class="input is-rounded" type="text" placeholder="Father's Name" 
+                   name="fname" [(ngModel)]="fname" required minlength="5" 
+                   #fnameInput="ngModel" style="width: 45%; left:110px">
+            <div class="help is-danger" *ngIf="fnameInput.invalid && fnameInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+              <b>Required</b>
+            </div>
+          </div> 
+
+          <div class="field"> <span class="labe">Father's Mobile Number</span>
+            <input class="input is-rounded number" type="text" placeholder="Mobile Number"
+                   name="fMobNum" [(ngModel)]="fMobNum" required minlength="10" maxlength="10" 
+                   #fMobNumInput="ngModel" style="width: 45%; left:35px">
+            <div class="help is-danger" *ngIf="fMobNumInput.invalid && fMobNumInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+              <b>Invalid Number</b>
+            </div>
+          </div>  
+
+          <div class="field"> <span class="labe">Father's Email ID</span>
+            <input class="input is-rounded" type="email" placeholder="Email ID" 
+                   name="fEmail" [(ngModel)]="fEmail" required email
+                   #fEmailInput="ngModel" style="width: 45%; left:90px"> 
+            <div *ngIf="fEmailInput.errors && fEmailInput.touched"> 
+              <div *ngIf="fEmailInput.errors.required"> 
+                Email required.
+              </div>			   
+              <div *ngIf="fEmailInput.invalid && !fEmailInput.errors.required"> 
+                Email not valid.
+              </div>
+            </div>  
+          </div> 
+
+          <div class="field"> <span class="labe">Password</span> 
+            <input class="input is-rounded" type="password" placeholder="Password" 
+                   name="pass" [(ngModel)]="pass" required minlength="6" 
+                   #passInput="ngModel"  style="width: 45%;left:150px"> 
+            <div class="help is-danger" *ngIf="passInput.invalid && passInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+              <b>Password is required and needs to be at least 6 characters long.</b>
+            </div>
+          </div> 
+
+          <div class="field"> <span class="labe">Confirm Password</span>
+            <input class="input is-rounded" type="password" placeholder="Password" 
+                   name="confPass" [(ngModel)]="confPass" required minlength="6" 
+                   #confpassInput="ngModel"  style="width: 45%;left:80px"> 
+            <div class="help is-danger" *ngIf="confpassInput.invalid && confpassInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+              <b>Password is required and needs to be at least 6 characters long.</b>
+            </div>
+          </div>  
+
+          
+
+          <div class="field level-item has-text-centered">   
+            <button type="submit" class="button is-success" id="Submit" name="Submit" style="right:50px"  
+                  (click)="send()" > Register </button>  
+            <button type="reset" class="button" id="Clear" name="Clear" style="background-color:rgb(82, 119, 241); color: white; left:-20px"> Clear </button> 
+          </div>  
+        </article>
+      </div>  
+      
+       
+    </form>
+  </div> 
+  
+</section>
+

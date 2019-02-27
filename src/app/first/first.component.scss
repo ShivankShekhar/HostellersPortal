@@ -1,0 +1,42 @@
+
+
+.bkg {
+    /* The image used */ 
+    background-image: url(../../assets/images/background.JPG); 
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: 80%;
+}
+.box{
+	width: 900px;
+	height: 410px;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	font-size: 50px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+}
+.vl {
+    border-left: 6px solid white;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 22%;
+}
+.foo{
+	font-family: sans-serif;
+	color: #fff;
+	width: 100%;
+	height: 40px;
+	background: rgba(0,0,0,0.5);
+	background-color: #2B2C35;
+	position: absolute;
+	text-align: center;
+	align-content: center;
+	top: 90%;
+	left: 0px;
+}

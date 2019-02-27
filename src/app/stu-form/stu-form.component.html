@@ -1,0 +1,80 @@
+<app-header></app-header>
+<section class="section" style="background-color: rgba(167, 226, 236, 0.658); height:650px;">
+  <div class="container"> 
+    <form name="login" (ngSubmit)="submitForm()"> 
+      <h2 class="lab">Leave Application Form</h2>  
+      <div class="tile is-parent tile is-6 level-item" id="home" >
+        <article class="tile is-child box"> 
+
+          <div class="field"> <span class="labe">Student Id </span>
+            <input class="input is-rounded" type="text" placeholder="User ID" 
+                   name="userId" [(ngModel)]="userId" disabled
+                   style="width: 45%; left:135px"> 
+          </div>   
+
+          <div class="field"> <span class="labe">Hostel</span>
+            <input class="input is-rounded" type="text" placeholder="Hostel" 
+                   name="Hostel" [(ngModel)]="Hostel" disabled 
+                   style="width: 45%; left:175px"> 
+          </div>
+
+          <div class="field"> <span class="labe">Room No.</span>
+            <input class="input is-rounded" type="text" placeholder="Room No." 
+                   name="roomNo" [(ngModel)]="roomNo" disabled 
+                   style="width: 45%; left:140px"> 
+          </div> 
+
+          <div class="field"> <span class="labe">Email ID</span>
+            <input class="input is-rounded" type="email" placeholder="Email ID" 
+                   name="email" [(ngModel)]="email" disabled
+                   style="width: 45%; left:155px">  
+          </div> 
+
+          <div class="field"> <span class="labe">Mobile Number</span>
+            <input class="input is-rounded number" type="text" placeholder="Mobile Number"
+                   name="mobNum" [(ngModel)]="mobNum" disabled 
+                   style="width: 45%; left:90px"> 
+          </div>  
+
+          <div class="field"> <span class="labe">Request Type  </span> 
+            <div class="select is-rounded" style=" left:95px; height:20px">
+              <div class="select "> 
+                <select>
+                  <option>Night Out</option>
+                  <option>Outing</option> 
+                </select>
+              </div>
+            </div> 
+          </div> 
+           
+
+          <div class="field"> <span class="labe">From </span>
+            <div class="select is-rounded" style="left:180px;  height:20px">
+                <input type="text" [(ngModel)]="startDate" required
+                       name="startDate" id="startDate" bsDatepicker [bsConfig]="datepickerConfig">
+              </div>   
+          </div> 
+
+          <div class="field"> <span class="labe">Upto </span>
+            <div class="select is-rounded" style="left:185px; height:20px">
+                <input type="text" [(ngModel)]="endDate" required
+                name="endDate" id="endDate" bsDatepicker [bsConfig]="datepickerConfig">
+              </div>   
+          </div> 
+
+          <div class="field"> <span class="labe">Visiting to</span>
+            <textarea class="input is-info" placeholder="Name, Relation , Address"
+                   name="Loc" [(ngModel)]="Loc" required id="Loc" 
+                   style="width: 45%; left:145px; height:80px;"> </textarea>
+          </div>    
+               
+          <div class="field level-item has-text-centered">  
+            <button type="submit" class="button is-success" id="Submit" name="Submit" style="right:50px"> Submit </button> 
+            <button type="reset" class="button" id="Clear" name="Clear" style="background-color:rgb(82, 119, 241); color: white; left:-20px"> Clear </button> 
+          </div>  
+        </article>
+      </div>  
+    </form>
+  </div> 
+</section>
+ 

@@ -1,0 +1,34 @@
+<app-header></app-header>
+<section class="section" style="background-color: rgba(167, 226, 236, 0.658); height:505px;">
+    <div class="container">  
+      <form name="login" > 
+        <h2 class="lab">Faculty Login Portal</h2>  
+        <div class="tile is-parent tile is-5 level-item" id="home" >
+          <article class="tile is-child box"> 
+             <div class="field"> <span class="labe">User Id </span>
+              <input class="input is-rounded" type="text" placeholder="User ID" 
+                     name="userId" [(ngModel)]="userId" required minlength="5" 
+                     #nameInput="ngModel" style="width: 45%; left:67px">
+              <div class="help is-danger" *ngIf="nameInput.invalid && nameInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+                <b>Name is required and needs to be at least 5 characters long.</b>
+              </div>
+            </div>  
+             <div class="field"> <span class="labe">Password </span>
+              <input class="input is-rounded" type="password" placeholder="Password" 
+                     name="pass" [(ngModel)]="pass" required minlength="6" 
+                     #passInput="ngModel"  style="width: 45%;left:40px"> 
+              <div class="help is-danger" *ngIf="passInput.invalid && passInput.dirty" style="background-color: rgba(216, 122, 122, 0.692)">
+                <b>Password is required and needs to be at least 6 characters long.</b>
+              </div>
+            </div>  
+            <div class="field level-item has-text-centered">  
+              <button type="submit" class="button is-success" id="Submit" name="Submit" style="right:50px" (click)="fac-login();" > Login </button> 
+              <button type="reset" class="button" id="Clear" name="Clear" style="background-color:rgb(82, 119, 241); color: white; left:-20px"> Clear </button> 
+            </div> 
+            <a routerLink='Register' class="has-text-centered" >New User SignUp!</a>
+          </article>
+        </div>  
+      </form>
+    </div> 
+  </section>
+   
